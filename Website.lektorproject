@@ -1,0 +1,22 @@
+[project]
+name = poly.berlin
+url = https://www.poly.berlin/
+url_style = relative
+
+[servers.ghpages]
+enabled = yes
+name = Github pages on repo
+target = ghpages://poly-berlin/website?cname=www.poly.berlin
+default = yes
+
+[servers.ghpages-https]
+enabled = yes
+name = Github pages on repo
+target = ghpages+https://poly-berlin/website?cname=www.poly.berlin
+default = not
+
+
+[packages]
+lektor-webpack-support = 0.6.0
+lektor-markdown-header-anchors = 0.3.1
+lektor-markdown-admonition = 0.1
