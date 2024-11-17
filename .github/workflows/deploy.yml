@@ -6,7 +6,7 @@ on:
       - "*"
   push:
     branches:
-      - "master"
+      - "main"
   workflow_dispatch:
     # Allow manually running workflow
   schedule:
@@ -17,7 +17,7 @@ env:
     ${{
     github.event_name != 'pull_request'
     &&
-    github.ref == 'refs/heads/master'
+    github.ref == 'refs/heads/main'
     }}
   OUTPUT: _html
 
