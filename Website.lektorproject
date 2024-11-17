@@ -26,6 +26,5 @@ locale = en_US
 url_prefix = /en/
 
 [packages]
-lektor-webpack-support = 0.6.0
 lektor-markdown-header-anchors = 0.3.1
 lektor-markdown-admonition = 0.1
