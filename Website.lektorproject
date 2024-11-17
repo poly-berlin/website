@@ -15,6 +15,15 @@ name = Github pages on repo
 target = ghpages+https://poly-berlin/website?cname=www.poly.berlin
 default = not
 
+[alternatives.de]
+name = German
+locale = de
+primary = yes
+
+[alternatives.en]
+name = English
+locale = en_US
+url_prefix = /en/
 
 [packages]
 lektor-webpack-support = 0.6.0

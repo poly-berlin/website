@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{{ '/static/style.css'|asseturl }}">
+<link rel="icon" href="{{ site.root.attachments.images.get('favicon.png')|url }}">
+<title>{% block title %}Willkommen{% endblock %} — poly.berlin</title>
+<body>
+  <header>
+    <a href="{{ site.root|url }}" style="text-decoration: none;">
+      <img class="logo" src="{{ site.root.attachments.images.get('logo.svg').thumbnail(250)|url }}">
+      <h1 class="logo">poly.berlin</h1>
+    </a>
+    <nav>
+      <ul class="nav navbar-nav">
+        <li{% if this._path == '/' %} class="active"{% endif
+          %}><a href="{{ '/'|url }}">Home</a></li>
+        {% for href, title in [
+          ['/buecher', 'Bücher'],
+          ['/impressum', 'Impressum']
+        ] %}
+          <li{% if this.is_child_of(href) %} class="active"{% endif
+            %}><a href="{{ href|url }}">{{ title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+  <div class="page">
+    {% if this._path == '/' %}
+      <ul>
+        {% for alt in get_alts() %}
+          <li style="display: inline;">
+            <a href="{{ '.'|url(alt=alt) }}">{{ alt }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% block body %}{% endblock %}
+  </div>
+  <footer>
+    &copy; Copyright 2024 poly.berlin
+  </footer>
+</body>
